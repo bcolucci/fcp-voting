@@ -22,10 +22,5 @@
       1,
       "never"
     ]
-  },
-  "settings": {
-    "flowtype": {
-      "onlyFilesWithFlowAnnotation": true
-    }
   }
 }
