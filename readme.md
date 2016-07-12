@@ -16,6 +16,7 @@ User stories:
 ## How to test
 
     git clone https://github.com/bcolucci/fcp-voting.git \
-      && cd fcp-voting
-      && npm install
+      && cd fcp-voting \
+      && npm install \
+      && npm start \
       && xdg-open http://localhost:3210/
