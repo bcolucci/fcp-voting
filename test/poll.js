@@ -1,6 +1,8 @@
 
 import sinon from 'sinon';
-import votingTopic from '../src/voting-topic';
+import Poll from '../src/poll';
+
+console.log(''.should);
 
 describe('Voting application', () => {
 

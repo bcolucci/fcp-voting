@@ -17,6 +17,6 @@ User stories:
 
     git clone https://github.com/bcolucci/fcp-voting.git \
       && npm install \
-      && npm test \
+      && npm run test \
       && npm start \
       && xdg-open http://localhost:3210/
