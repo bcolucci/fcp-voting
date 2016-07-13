@@ -1,12 +1,22 @@
 'use strict';
 
 import App from '../src/App';
+import State from '../src/State';
 import AddUser from '../src/actions/AddUser';
 
 describe('App', () => {
 
+  let app
+    , initialState
+    , addUnauthenticatedUser
+    , addBriceUser;
+
   before(() => {
     stubNow();
+    app = new App;
+    initialState = new State;
+    addUnauthenticatedUser = new AddUser;
+    addBriceUser = new AddUser('brice');
   });
 
   after(() => {
@@ -14,10 +24,7 @@ describe('App', () => {
   });
 
   it('should add user', () => {
-    const app = new App;
-    const addUnauthenticated = new AddUser;
-    const addBrice = new AddUser('brice');
-    const state = app.reduce(app.reduce(app.reduce(undefined, addUnauthenticated), addBrice), addBrice);
+    const state = app.reduce(app.reduce(app.reduce(initialState, addUnauthenticatedUser), addBriceUser), addBriceUser);
     clone(state).should.be.deepEqual({
       users: [
         { login: 'Unauthenticated', createdAt: 123456789 },
