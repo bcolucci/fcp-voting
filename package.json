@@ -8,6 +8,7 @@
   "private": true,
   "dependencies": {
     "immutable": "^3.8.1",
+    "koa": "^1.2.0",
     "redux": "^3.5.2",
     "require-dir": "^0.3.0"
   },

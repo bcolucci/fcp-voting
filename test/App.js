@@ -40,7 +40,7 @@ describe('App', () => {
 
   describe('Store', () => {
 
-    it('should ...', () => {
+    it('should dispatch actions', () => {
       store.dispatch((new AddUser).toPlain());
       toPlain(store.getState()).should.be.deepEqual({
         users: [

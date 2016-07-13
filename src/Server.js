@@ -1,4 +1,4 @@
 
-//TODO
+import API from './API';
 
-export default {};
+API.listen(process.env.PORT);
