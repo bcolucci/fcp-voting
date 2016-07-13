@@ -8,6 +8,7 @@
   "private": true,
   "dependencies": {
     "immutable": "^3.8.1",
+    "redux": "^3.5.2",
     "require-dir": "^0.3.0"
   },
   "devDependencies": {

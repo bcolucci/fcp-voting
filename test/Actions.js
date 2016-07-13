@@ -13,6 +13,7 @@ describe('Actions', () => {
   });
 
   it('AddUser', () => {
+    (new AddUser).should.have.property('type', 'AddUser');
     (new AddUser).should.have.property('login', 'Unauthenticated');
     (new AddUser('brice')).should.have.property('login', 'brice');
   });
@@ -28,21 +29,25 @@ describe('Actions', () => {
     })
 
     it('without options', () => {
-      clone(new CreatePoll(title, 'brice')).should.be.deepEqual({
+      const poll = new CreatePoll(title, 'brice');
+      poll.should.have.property('type', 'CreatePoll');
+      toPlain(poll).should.be.deepEqual({
         name: title,
         createdAt: NOW,
         creator: 'brice',
-        options: []
+        options: [],
+        type: 'CreatePoll'
       });
     });
 
     it('with options', () => {
       const options = [ 'Red', 'Green', 'Blue' ];
-      clone(new CreatePoll(title, 'brice', options)).should.be.deepEqual({
+      toPlain(new CreatePoll(title, 'brice', options)).should.be.deepEqual({
         name: title,
         createdAt: NOW,
         creator: 'brice',
-        options: options
+        options: options,
+        type: 'CreatePoll'
       });
     });
 

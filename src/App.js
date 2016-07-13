@@ -1,25 +1,30 @@
 
 import I from 'immutable';
+import { createStore } from 'redux';
+
 import State from './State';
 import User from './User';
 import Action from './Action';
 import AddUser from './actions/AddUser';
 
-class App {
+const initialState = new State;
 
-  reduce(state: State, action: Action): State {
-    let newState = state.set('actions', state.actions.push(action));
-    if ('AddUser' === action.name)
-      return this.addUser(newState, action);
-    return newState;
-  }
+// TODO actions are of type 'any' because of redux (cannot fix a type)
 
-  addUser(state: State, action: AddUser) {
-    if (state.hasUser(action.login))
-      return state;
-    return state.set('users', state.users.push(new User(action.login)));
-  }
-
+const reduce = (state?: State = initialState, action: any): State => {
+  let newState = state.set('actions', state.actions.push(action));
+  if ('AddUser' === action.type)
+    return addUser(newState, action);
+  return newState;
 };
 
-export default App;
+const addUser = (state: State, action: any) => {
+  if (state.hasUser(action.login))
+    return state;
+  return state.set('users', state.users.push(new User(action.login)));
+};
+
+export default {
+  reduce,
+  createStore: () => createStore(reduce)
+};

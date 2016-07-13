@@ -23,7 +23,7 @@ describe('Option', () => {
     const option = new Option('Select a movie');
     option.should.have.property('votes', I.List());
     option.votes = option.votes.push(new Vote(new User)).push(new Vote(new User('brice')));
-    clone(option.votes).should.be.deepEqual([
+    toPlain(option.votes).should.be.deepEqual([
       { voter: { login: 'Unauthenticated', createdAt: NOW } },
       { voter: { login: 'brice', createdAt: NOW } }
     ]);

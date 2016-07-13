@@ -1,12 +1,16 @@
 
 class Action {
 
-  name: string;
+  type: string;
   createdAt: number;
 
   constructor() {
-    this.name = this.constructor.name;
+    this.type = this.constructor.name;
     this.createdAt = Date.now();
+  }
+
+  toPlain(): any {
+    return JSON.parse(JSON.stringify(this));
   }
 
 };
