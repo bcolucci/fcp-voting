@@ -27,12 +27,13 @@ describe('App', () => {
     const state = app.reduce(app.reduce(app.reduce(initialState, addUnauthenticatedUser), addBriceUser), addBriceUser);
     clone(state).should.be.deepEqual({
       users: [
-        { login: 'Unauthenticated', createdAt: 123456789 },
-        { login: 'brice', createdAt: 123456789 } ],
+        { login: 'Unauthenticated', createdAt: NOW },
+        { login: 'brice', createdAt: NOW } ],
+      polls: [],
       actions: [
-        { createdAt: 123456789, login: 'Unauthenticated', name: 'AddUser' },
-        { createdAt: 123456789, login: 'brice', name: 'AddUser' },
-        { createdAt: 123456789, login: 'brice', name: 'AddUser' }
+        { createdAt: NOW, login: 'Unauthenticated', name: 'AddUser' },
+        { createdAt: NOW, login: 'brice', name: 'AddUser' },
+        { createdAt: NOW, login: 'brice', name: 'AddUser' }
       ]
     });
   });

@@ -4,6 +4,7 @@ import I from 'immutable';
 
 const State = I.Record({
   users: I.List(),
+  polls: I.List(),
   actions: I.List()
 });
 
