@@ -5,8 +5,16 @@ import Vote from '../src/Vote';
 
 describe('Vote', () => {
 
-  it('may have a voter', () => {
-    (new Vote).should.have.property('voter', new User('Unauthenticated'));
+  before(() => {
+    stubNow();
+  });
+
+  after(() => {
+    restoreNow();
+  });
+
+  it('should have a voter', () => {
+    (new Vote(new User)).should.have.property('voter', new User);
     (new Vote(new User('brice'))).should.have.property('voter', new User('brice'));
   });
 

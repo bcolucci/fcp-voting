@@ -6,7 +6,7 @@ export default class Vote {
 
   voter: User;
 
-  constructor(voter?: User = new User) {
+  constructor(voter: User) {
     this.voter = voter;
   }
 

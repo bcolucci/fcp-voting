@@ -22,7 +22,10 @@ describe('Poll', () => {
       , blueOpt = new Option('Blue');
     poll.should.have.property('options').and.be.equal(I.List());
     poll.options = poll.options.push(redOpt).push(blueOpt);
-    JSON.stringify(poll.options).should.be.equal('[{"label":"Red","votes":[]},{"label":"Blue","votes":[]}]');
+    clone(poll.options).should.be.deepEqual([
+      { label: 'Red', votes: [] },
+      { label: 'Blue', votes: [] }
+    ]);
   });
 
 });
