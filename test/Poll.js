@@ -8,9 +8,9 @@ import Option from '../src/Option';
 describe('Poll', () => {
 
   it('should have a name and a authenticated creator', () => {
-    (() => new Poll).should.throw(Error);
-    (() => new Poll('What is your favorite color?')).should.throw(Error);
-    (() => new Poll('What is your favorite color?', new User)).should.throw(Error); // unauthenticated
+    ((): Poll => new Poll).should.throw(Error);
+    ((): Poll => new Poll('What is your favorite color?')).should.throw(Error);
+    ((): Poll => new Poll('What is your favorite color?', new User)).should.throw(Error); // unauthenticated
     const poll = new Poll('What is your favorite color?', new User('brice'));
     poll.should.have.property('name', 'What is your favorite color?');
     poll.should.have.property('creator',  new User('brice'));

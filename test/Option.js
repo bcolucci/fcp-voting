@@ -16,7 +16,7 @@ describe('Option', () => {
   });
 
   it('should have a label', () => {
-    (() => new Option).should.throw(Error);
+    ((): Option => new Option).should.throw(Error);
     (new Option('Select a movie')).should.have.property('label', 'Select a movie');
   });
 
