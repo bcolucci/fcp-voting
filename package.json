@@ -4,6 +4,7 @@
   "decription": "Free Code Camp Header parser",
   "author": "Brice Colucci <brice.colucci@gmail.com>",
   "license": "MIT",
+  "main": "index.js",
   "private": true,
   "scripts": {
     "start": "./node_modules/.bin/nf start",
@@ -30,6 +31,7 @@
     "flow-bin": "^0.28.0",
     "jslint": "^0.10.1",
     "mocha": "^2.5.3",
-    "should": "^9.0.2"
+    "should": "^9.0.2",
+    "sinon": "^1.17.4"
   }
 }

@@ -1,3 +1,4 @@
+'use strict';
 
 import I from 'immutable';
 import User from './User';

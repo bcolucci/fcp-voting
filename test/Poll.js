@@ -1,14 +1,16 @@
+'use strict';
 
 import I from 'immutable';
 import User from '../src/User';
 import Poll from '../src/Poll';
 import Option from '../src/Option';
 
-describe('Voting Pool', () => {
+describe('Poll', () => {
 
   it('should have a name and a authenticated creator', () => {
     (() => new Poll).should.throw(Error);
     (() => new Poll('What is your favorite color?')).should.throw(Error);
+    (() => new Poll('What is your favorite color?', new User)).should.throw(Error); // unauthenticated
     const poll = new Poll('What is your favorite color?', new User('brice'));
     poll.should.have.property('name', 'What is your favorite color?');
     poll.should.have.property('creator',  new User('brice'));

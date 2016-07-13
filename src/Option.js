@@ -1,3 +1,4 @@
+'use strict';
 
 import I from 'immutable';
 import Vote from './Vote';
