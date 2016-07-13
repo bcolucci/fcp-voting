@@ -13,6 +13,12 @@ User stories:
 - TODO As an unauthenticated or authenticated user, I can see the results of polls in chart form. (This could be implemented using Chart.js or Google Charts.)
 - TODO As an authenticated user, if I don't like the options on a poll, I can create a new option.
 
+## TODO
+
+- Models, all actions, reducer... + tests (unit)
+- Server side (koa) + test (functional)
+- Documentation generation
+
 ## How to test
 
     git clone https://github.com/bcolucci/fcp-voting.git \
