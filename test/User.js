@@ -1,4 +1,3 @@
-'use strict';
 
 import User from '../src/User';
 

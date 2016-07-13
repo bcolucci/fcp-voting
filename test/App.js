@@ -1,4 +1,3 @@
-'use strict';
 
 import App from '../src/App';
 import State from '../src/State';

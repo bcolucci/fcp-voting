@@ -1,4 +1,3 @@
-'use strict';
 
 import AddUser from '../src/actions/AddUser';
 import CreatePoll from '../src/actions/CreatePoll';

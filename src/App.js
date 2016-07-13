@@ -1,4 +1,3 @@
-'use strict';
 
 import I from 'immutable';
 import State from './State';
