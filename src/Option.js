@@ -13,4 +13,8 @@ export default class Option {
     this.votes = votes;
   }
 
+  countVotes(): number {
+    return this.votes.count();
+  }
+
 };

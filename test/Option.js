@@ -28,6 +28,7 @@ describe('Option', () => {
       { voter: { login: 'Unauthenticated', createdAt: NOW } },
       { voter: { login: 'brice', createdAt: NOW } }
     ]);
+    option.countVotes().should.be.equal(2);
   });
 
 });

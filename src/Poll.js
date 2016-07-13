@@ -18,4 +18,10 @@ export default class Poll {
     this.options = options;
   }
 
+  optionsVotes(): I.Map {
+    return this.options.reduce((map, option) => {
+      return map.set(option.label, option.countVotes());
+    }, I.Map());
+  }
+
 };

@@ -26,6 +26,7 @@ describe('Poll', () => {
       { label: 'Red', votes: [] },
       { label: 'Blue', votes: [] }
     ]);
+    clone(poll.optionsVotes()).should.be.deepEqual({ Red: 0, Blue: 0 });
   });
 
 });
