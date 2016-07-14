@@ -7,9 +7,13 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
+    "babel-plugin-transform-react-jsx": "^6.8.0",
     "express": "^4.14.0",
     "immutable": "^3.8.1",
     "pug": "^2.0.0-beta3",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "react-redux": "^4.4.5",
     "redux": "^3.5.2",
     "require-dir": "^0.3.0"
   },
@@ -38,6 +42,7 @@
     "flow": "sh bin/flow.sh",
     "test": "sh bin/test.sh",
     "gendoc": "sh bin/docs.sh",
-    "build": "sh bin/build.sh"
+    "build": "sh bin/build.sh",
+    "package": "sh bin/package.sh"
   }
 }

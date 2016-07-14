@@ -7,11 +7,9 @@ import User from './User';
 import Action from './Action';
 import AddUser from './actions/AddUser';
 
-const initialState = new State;
-
 // TODO actions are of type 'any' because of redux (cannot fix a type)
 
-const reduce = (state?: State = initialState, action: any): State => {
+const reduce = (state?: State = new State, action: any): State => {
   let newState = state.set('actions', state.actions.push(action));
   if ('AddUser' === action.type)
     return addUser(newState, action);

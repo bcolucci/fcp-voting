@@ -1,18 +1,31 @@
 
+import fs from 'fs';
 import express from 'express';
+import pug from 'pug';
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+import { Provider } from 'react-redux';
+import App from './App';
+import AppComponent from './components/App';
 
-const app = express();
-const router = express.Router();
+const server = express();
 
-app.set('view engine', 'pug');
+//server.use('/', express.static('public'));
+//server.use('/components', express.static('bower_components'));
 
-app.use('/', express.static('public'));
-app.use('/externals', express.static('bower_components'));
+// react server-side rendering
+server.use((req, res) => {
 
-app.use(router);
+  const store = App.createStore();
+  const initialState = store.getState();
 
-router.get('/', (req, res) => {
-  res.render('index');
+  const html = pug.render(fs.readFileSync('index.pug'), {
+    initialState: initialState,
+    app: renderToString( <Provider store={store}><AppComponent /></Provider> )
+  });
+
+  res.end(html);
+  
 });
 
-export default app;
+export default server;
