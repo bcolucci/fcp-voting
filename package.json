@@ -1,5 +1,5 @@
 {
-  "name": "fcc-voting",
+  "name": "fcp-voting",
   "version": "1.0.0",
   "decription": "Free Code Camp Header parser",
   "author": "Brice Colucci <brice.colucci@gmail.com>",
@@ -7,8 +7,9 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
+    "express": "^4.14.0",
     "immutable": "^3.8.1",
-    "koa": "^1.2.0",
+    "pug": "^2.0.0-beta3",
     "redux": "^3.5.2",
     "require-dir": "^0.3.0"
   },
@@ -18,6 +19,7 @@
     "babel-plugin-syntax-flow": "^6.8.0",
     "babel-plugin-transform-class-properties": "^6.10.2",
     "babel-plugin-transform-flow-strip-types": "^6.8.0",
+    "babel-plugin-transform-react-jsx": "^6.8.0",
     "babel-plugin-typecheck": "^3.9.0",
     "babel-preset-es2015": "^6.9.0",
     "babel-register": "^6.9.0",
