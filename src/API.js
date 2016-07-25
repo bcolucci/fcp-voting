@@ -10,8 +10,7 @@ import AppComponent from './components/App';
 
 const server = express();
 
-//server.use('/', express.static('public'));
-//server.use('/components', express.static('bower_components'));
+server.use('/components', express.static('bower_components'));
 
 // react server-side rendering
 server.use((req, res) => {
@@ -25,7 +24,7 @@ server.use((req, res) => {
   });
 
   res.end(html);
-  
+
 });
 
 export default server;

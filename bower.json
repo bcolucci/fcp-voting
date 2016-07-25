@@ -11,5 +11,8 @@
     "bower_components",
     "lib",
     "test"
-  ]
+  ],
+  "dependencies": {
+    "react": "^15.2.1"
+  }
 }
